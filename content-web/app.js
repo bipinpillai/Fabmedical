@@ -5,6 +5,10 @@ const request = require('request');
 
 const app = express();
 
+const appInsights = require("applicationinsights");
+appInsights.setup("0e20ee4d-ef4a-4ec6-81fa-a2ebda56d02e");
+appInsights.start();
+
 app.use(express.static(path.join(__dirname, 'dist/content-web')));
 const contentApiUrl = process.env.CONTENT_API_URL || "http://52.168.71.107:3001";
 
